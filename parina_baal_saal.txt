@@ -1,0 +1,102 @@
+bool resCheck()
+{
+  if (playerGreen >= 3)
+  {
+    //for checking rows
+    int row_check = 1;
+    for(int i=0; i<3; i++)
+    {
+      if( ( gp[row_check] == gp[row_check+1] && gp[row_check+1] == gp[row_check+2] ) && gp[row_check] == true)
+      {
+        g = true;
+        res = "Player Green won!!!";
+        return true; 
+      }
+      row_check += 3;
+    }
+    //for checking columns
+    int col_check = 1;
+
+    for(int i=0; i<3; i++)
+    {
+      if( ( gp[col_check] == gp[col_check+3] && gp[col_check+3] == gp[col_check+6] ) && gp[col_check] == true)
+      {
+        g = true;
+        res = "Player Green won!!!";
+        return true; 
+      }
+      col_check++;
+    }
+    //for checking diagonals
+    if(gp[1] == gp[5] && gp[5] == gp[9] && gp[1] == true)
+    {
+        g = true;
+        res = "Player Green won!!!";
+        return true;
+    }
+    else if(gp[3] == gp[5] && gp[5] == gp[7] && gp[3] == true)
+    {
+        g = true;
+        res = "Player Green won!!!";
+        return true;
+    }
+  }
+  
+  if (playerRed >= 3)
+  {
+     //for checking rows
+    int row_check = 1;
+    for(int i=0; i<3; i++)
+    {
+      if( ( rp[row_check] == rp[row_check+1] && rp[row_check+1] == rp[row_check+2] ) && rp[row_check] == true)
+      {
+        res = "Player Red won!!!";
+        return true; 
+      }
+      row_check += 3;
+    }
+    //for checking columns
+    int col_check = 1;
+
+    for(int i=0; i<3; i++)
+    {
+      if( ( rp[col_check] == rp[col_check+3] && rp[col_check+3] == rp[col_check+6] ) && rp[col_check] == true)
+      {
+        res = "Player Red won!!!";
+        return true; 
+      }
+      col_check++;
+    }
+    //for checking diagonals
+    if(rp[1] == rp[5] && rp[5] == rp[9] && rp[1] == true)
+    {
+        res = "Player Red won!!!";
+        return true;
+    }
+    else if(rp[3] == rp[5] && rp[5] == rp[7] && rp[3] == true)
+    {
+        res = "Player Red won!!!";
+        return true;
+    }
+
+    int cnt = 0;
+    
+    for(int i = 1; i<=9; i++)
+    {
+      if(rp[i] == true || gp[i] == true)
+      {
+        cnt++;
+      }
+    }
+    if(cnt == 9)
+    {
+      d = true;
+      res = "Match is Draw!!!";
+      return true;
+    }
+  }
+  else
+  {
+    return false;
+  }
+}
