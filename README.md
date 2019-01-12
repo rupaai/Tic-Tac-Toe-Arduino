@@ -5,4 +5,5 @@ An Arduino implementation of Tic-Tac-Toe game. The game was an assignment of our
 3) After the end of game a player can choose whether he/she wants to repeat the game or not. If not, then both players score will be shown according to the matches they played. The winner will also be declared after the rounds.
 
 Video description is here:
-https://www.youtube.com/watch?v=lBQkjFP7B9A&feature=youtu.be
+[![IMAGE ALT TEXT HERE](Tic-tac.jpg)](http://www.youtube.com/watch?v=lBQkjFP7B9A)
+
